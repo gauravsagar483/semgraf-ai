@@ -1,0 +1,9 @@
+# Semgraf marketing SPA — Cloudflare Workers static assets
+# https://developers.cloudflare.com/workers/static-assets/routing/single-page-application/
+
+name = "semgraf-ai"
+compatibility_date = "2026-08-04"
+
+[assets]
+directory = "./apps/web/dist"
+not_found_handling = "single-page-application"

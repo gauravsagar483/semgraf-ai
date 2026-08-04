@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "pnpm --filter @semgraf/web dev",
     "build": "pnpm --filter @semgraf/web build",
-    "typecheck": "pnpm --filter @semgraf/web exec tsc --noEmit"
+    "typecheck": "pnpm --filter @semgraf/web exec tsc --noEmit",
+    "cf:build": "corepack enable && pnpm install --frozen-lockfile && pnpm build"
   },
   "engines": {
     "node": ">=20",
