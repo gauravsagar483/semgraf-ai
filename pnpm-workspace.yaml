@@ -1,0 +1,13 @@
+packages:
+  - "apps/web"
+  - "packages/sdk-ts"
+
+# pnpm 11: allowlisted postinstall builds only
+allowBuilds:
+  esbuild: true
+
+# Fresh packages must be ≥1 day old by default; loosen for Vite toolchain installs
+minimumReleaseAge: 0
+
+shamefullyHoist: false
+strictPeerDependencies: false

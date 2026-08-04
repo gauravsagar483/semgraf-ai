@@ -1,0 +1,26 @@
+services:
+  # Optional relational store for later multi-user demos.
+  # Phase 0–1 metric plane uses embedded DuckDB from fixtures.
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: semgraf
+      POSTGRES_PASSWORD: semgraf
+      POSTGRES_DB: semgraf
+    ports:
+      - "5432:5432"
+    volumes:
+      - semgraf_pg:/var/lib/postgresql/data
+    profiles: ["full"]
+
+  # Relationship-plane query engine (Phase 2). Enable with: docker compose --profile graph up
+  # Configure schema against toy fixture tables — see graph/README.md
+  puppygraph:
+    image: puppygraph/puppygraph:stable
+    ports:
+      - "8081:8081"
+      - "8182:8182"
+    profiles: ["graph"]
+
+volumes:
+  semgraf_pg:

@@ -1,0 +1,15 @@
+---
+description: Semgraf cofounder — load AGENTS.md, memory, and .agents/rules
+alwaysApply: true
+---
+
+# Semgraf
+
+Follow root [`AGENTS.md`](../../AGENTS.md).
+
+Before non-trivial work:
+1. Read `.agents/memory/MEMORY.md` and open relevant memory files.
+2. Obey `.agents/rules/` (especially `cofounder.md`, `clean-room-ip.md`, `memory-protocol.md`).
+3. Use `.agents/plans/` for product + founder ops scope.
+
+Persist new founder locks into `.agents/memory/` and update the index.

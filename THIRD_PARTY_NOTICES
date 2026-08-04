@@ -1,0 +1,15 @@
+# Third-party notices
+
+Semgraf product code is proprietary. Dependencies use their own licenses.
+
+| Package | Typical license | Use |
+|---------|-----------------|-----|
+| FastAPI | MIT | API |
+| Pydantic | MIT | models |
+| Uvicorn | BSD-3 | server |
+| DuckDB | MIT | local warehouse |
+| PyYAML | MIT | semantic models |
+| httpx | BSD-3 | SDK client |
+| React / Vite | MIT | web |
+
+Add NOTICE entries when vendoring or shipping binaries. Prefer MIT / Apache-2.0 / BSD.

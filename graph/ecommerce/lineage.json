@@ -1,0 +1,30 @@
+{
+  "fixture": "ecommerce",
+  "nodes": [
+    {"id": "raw.customers", "kind": "table", "label": "customers"},
+    {"id": "raw.products", "kind": "table", "label": "products"},
+    {"id": "raw.orders", "kind": "table", "label": "orders"},
+    {"id": "raw.order_items", "kind": "table", "label": "order_items"},
+    {"id": "model.orders_enriched", "kind": "model", "label": "orders_enriched"},
+    {"id": "metric.total_revenue", "kind": "metric", "label": "total_revenue"},
+    {"id": "metric.order_count", "kind": "metric", "label": "order_count"},
+    {"id": "metric.revenue_by_segment", "kind": "metric", "label": "revenue_by_segment"},
+    {"id": "metric.revenue_by_category", "kind": "metric", "label": "revenue_by_category"},
+    {"id": "metric.units_sold", "kind": "metric", "label": "units_sold"},
+    {"id": "dash.executive", "kind": "dashboard", "label": "Executive overview"}
+  ],
+  "edges": [
+    {"from": "raw.customers", "to": "model.orders_enriched", "type": "DERIVED_FROM"},
+    {"from": "raw.orders", "to": "model.orders_enriched", "type": "DERIVED_FROM"},
+    {"from": "raw.order_items", "to": "model.orders_enriched", "type": "DERIVED_FROM"},
+    {"from": "raw.products", "to": "model.orders_enriched", "type": "DERIVED_FROM"},
+    {"from": "model.orders_enriched", "to": "metric.total_revenue", "type": "FEEDS"},
+    {"from": "model.orders_enriched", "to": "metric.order_count", "type": "FEEDS"},
+    {"from": "model.orders_enriched", "to": "metric.revenue_by_segment", "type": "FEEDS"},
+    {"from": "model.orders_enriched", "to": "metric.revenue_by_category", "type": "FEEDS"},
+    {"from": "model.orders_enriched", "to": "metric.units_sold", "type": "FEEDS"},
+    {"from": "metric.total_revenue", "to": "dash.executive", "type": "DISPLAYED_ON"},
+    {"from": "metric.order_count", "to": "dash.executive", "type": "DISPLAYED_ON"},
+    {"from": "metric.revenue_by_segment", "to": "dash.executive", "type": "DISPLAYED_ON"}
+  ]
+}

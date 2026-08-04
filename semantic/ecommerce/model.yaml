@@ -1,0 +1,127 @@
+# OSI-derived semantic model (ecommerce toy).
+# Shapes inspired by public semantic interchange docs — not pinned to a moving 0.x.
+version: "semgraf-osi/0.1"
+fixture: ecommerce
+
+datasets:
+  - name: customers
+    table: customers
+    fields:
+      - name: customer_id
+        type: integer
+      - name: name
+        type: string
+      - name: segment
+        type: string
+        ai_context: "Customer size band: smb or enterprise"
+      - name: country
+        type: string
+
+  - name: products
+    table: products
+    fields:
+      - name: product_id
+        type: integer
+      - name: name
+        type: string
+      - name: category
+        type: string
+      - name: unit_price
+        type: number
+
+  - name: orders
+    table: orders
+    fields:
+      - name: order_id
+        type: integer
+      - name: customer_id
+        type: integer
+      - name: order_date
+        type: date
+        dimension:
+          is_time: true
+      - name: status
+        type: string
+
+  - name: order_items
+    table: order_items
+    fields:
+      - name: order_item_id
+        type: integer
+      - name: order_id
+        type: integer
+      - name: product_id
+        type: integer
+      - name: quantity
+        type: integer
+      - name: line_total
+        type: number
+
+relationships:
+  - name: orders_to_customers
+    from: orders.customer_id
+    to: customers.customer_id
+  - name: items_to_orders
+    from: order_items.order_id
+    to: orders.order_id
+  - name: items_to_products
+    from: order_items.product_id
+    to: products.product_id
+
+metrics:
+  - name: total_revenue
+    label: Total revenue
+    description: Sum of line totals for completed orders
+    ai_context: "Use for overall GMV-style revenue. Excludes cancelled orders."
+    measure:
+      expr: "SUM(order_items.line_total)"
+    grain: []
+    filters:
+      - "orders.status = 'completed'"
+    joins:
+      - items_to_orders
+
+  - name: order_count
+    label: Order count
+    description: Count of completed orders
+    measure:
+      expr: "COUNT(DISTINCT orders.order_id)"
+    grain: []
+    filters:
+      - "orders.status = 'completed'"
+
+  - name: revenue_by_segment
+    label: Revenue by segment
+    description: Completed revenue broken out by customer segment
+    measure:
+      expr: "SUM(order_items.line_total)"
+    grain:
+      - customers.segment
+    filters:
+      - "orders.status = 'completed'"
+    joins:
+      - items_to_orders
+      - orders_to_customers
+
+  - name: revenue_by_category
+    label: Revenue by category
+    description: Completed revenue by product category
+    measure:
+      expr: "SUM(order_items.line_total)"
+    grain:
+      - products.category
+    filters:
+      - "orders.status = 'completed'"
+    joins:
+      - items_to_orders
+      - items_to_products
+
+  - name: units_sold
+    label: Units sold
+    description: Total quantity sold on completed orders
+    measure:
+      expr: "SUM(order_items.quantity)"
+    filters:
+      - "orders.status = 'completed'"
+    joins:
+      - items_to_orders

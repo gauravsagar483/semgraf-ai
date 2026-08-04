@@ -1,0 +1,17 @@
+[project]
+name = "semgraf-ai"
+version = "0.1.0"
+description = "Semgraf monorepo — dual-plane runtime for data agents"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.uv]
+package = false
+
+[tool.uv.workspace]
+members = ["apps/api", "packages/sdk-py"]
+
+[tool.uv.sources]
+semgraf-api = { workspace = true }
+semgraf = { workspace = true }
