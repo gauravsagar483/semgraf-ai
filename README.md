@@ -37,6 +37,18 @@ pnpm dev
 
 Open http://localhost:5173 — Ask a metric (e.g. `total revenue`).
 
+## UI
+
+Marketing site + Ask console (local screenshots):
+
+| Landing | Ask | Blog |
+|---------|-----|------|
+| ![Landing](docs/screenshots/landing.png) | ![Ask console](docs/screenshots/ask.png) | ![Blog](docs/screenshots/blog.png) |
+
+- `/` — brand-first marketing
+- `/ask` — dual-plane Ask + Trace (ecommerce fixture)
+- `/blog` — product notes
+
 ## Phases
 
 See `.agents/plans/dual-plane_agent_framework_6af3daeb.plan.md` and `.agents/skills/build-phase/SKILL.md`.
