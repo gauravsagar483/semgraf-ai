@@ -14,6 +14,7 @@ metadata:
 - **Deploy host:** Cloudflare (dash.cloudflare.com) — Pages + Git connect
 - Keep Hostinger as registrar; DNS either stay Hostinger or move NS → Cloudflare
 - Point apex + `www` at Pages custom domain
+- **Git hygiene:** default machine SSH/`gh`/`user.email` still point at **employer** (`gsagar_expedia`). Semgraf push must use personal (`gauravsagar483` + `gauravsagar483@gmail.com` via `personal.github.com`). Never push Semgraf with work identity.
 - Public go-live still behind COI gate
 
 Related: [[clean-room-gates]] [[founder-constraints]] [[build-progress]]
