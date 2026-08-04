@@ -6,7 +6,8 @@
     "dev": "pnpm --filter @semgraf/web dev",
     "build": "pnpm --filter @semgraf/web build",
     "typecheck": "pnpm --filter @semgraf/web exec tsc --noEmit",
-    "cf:build": "corepack enable && pnpm install --frozen-lockfile && pnpm build"
+    "cf:build": "corepack enable && pnpm install --frozen-lockfile && pnpm build",
+    "cf:deploy": "npx wrangler deploy --cwd apps/web"
   },
   "engines": {
     "node": ">=20",
