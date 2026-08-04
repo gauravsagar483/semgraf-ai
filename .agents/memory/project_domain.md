@@ -11,9 +11,9 @@ metadata:
 
 - **Domain:** `https://semgraf.in/` (not `.ai`)
 - **Registrar:** Hostinger
-- **Deploy host:** Cloudflare Workers + static assets (`apps/web/wrangler.toml`)
+- **Deploy host:** Cloudflare Workers + static assets (root `wrangler.toml` → `apps/web/dist`)
 - **CF build command:** `npm run build` (works) or `npm run cf:build`
-- **CF deploy command:** `npx wrangler deploy --cwd apps/web` (not bare `wrangler deploy` at monorepo root)
+- **CF deploy command:** `npx wrangler deploy` (root config; do not use `--cwd`)
 - Keep Hostinger as registrar; DNS either stay Hostinger or move NS → Cloudflare
 - Point apex + `www` at Worker custom domain
 - **Git hygiene:** default machine SSH/`gh`/`user.email` still point at **employer** (`gsagar_expedia`). Semgraf push must use personal (`gauravsagar483` + `gauravsagar483@gmail.com` via `personal.github.com`). Never push Semgraf with work identity.
