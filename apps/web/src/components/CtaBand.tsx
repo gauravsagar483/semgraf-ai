@@ -27,7 +27,7 @@ export function Footer() {
     <footer className="footer">
       <div className="shell footer-inner">
         <div className="footer-brand">
-          <span className="nav-mark" aria-hidden />
+          <img className="nav-mark" src="/brand/mark.svg" alt="" width={28} height={28} />
           <div>
             <strong>Semgraf</strong>
             <p>Metrics that compile. Relationships that verify.</p>

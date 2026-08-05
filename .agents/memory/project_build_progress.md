@@ -14,11 +14,13 @@ DONE:
 - Marketing website `/` + Blog `/blog` (Markdown in `content/blog/`) — Ask at `/ask`
 - Phase 0–1 API + ecommerce fixture + dual-plane ask
 - SDK stubs + skills
+- **Live static site:** https://semgraf.in/ (CF Workers; Hostinger registrar)
 
 NEXT:
-- Static deploy `semgraf.in` (Hostinger DNS → CF Pages / Vercel)
+- Host Ask API (or mock) behind `/api` for live demo
 - MCP FastMCP surface
 - Phase 2 richer graph
 - Landing polish / motion pass
+- COI before public LinkedIn / partners blast
 
 Related: [[locked-product-decisions]] [[plans-docs]]

@@ -13,7 +13,7 @@ export default function Nav({ variant = "marketing" }: { variant?: "marketing" |
     <header className="nav">
       <div className="nav-inner">
         <Link to="/" className="nav-brand" aria-label="Semgraf home">
-          <span className="nav-mark" aria-hidden />
+          <img className="nav-mark" src="/brand/mark.svg" alt="" width={28} height={28} />
           <span className="nav-word">
             Sem<span>graf</span>
           </span>

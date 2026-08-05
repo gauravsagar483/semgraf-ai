@@ -127,10 +127,11 @@ section[id],
 }
 
 .nav-mark {
-  width: 22px;
-  height: 22px;
-  border-radius: 7px;
-  background: var(--accent);
+  width: 28px;
+  height: 28px;
+  display: block;
+  flex-shrink: 0;
+  object-fit: contain;
 }
 
 .nav-word {

@@ -39,6 +39,8 @@ Marketing site first. Interactive Ask = sub-route, not the homepage.
 - No radial fades / glow washes — solid backgrounds only
 - Display: Fraunces · Body: IBM Plex Sans · Mono: IBM Plex Mono
 - Brand-first hero: **Semgraf** left; Recharts analytics stage right
+- **Mark (v0):** ascent graph-S in nav/footer — `public/brand/mark.svg` + light lockup archives; teal `#0f766e`, no glow
+- **v1 brand exploration (future):** flat SVG system, Fraunces wordmark pairing, light+dark tokens; drop spiral/bloom; refine ascent from raster originals
 - Motion: settle / float-in; Recharts animation off (v3 inactive-bar bug)
 
 ## Non-goals on landing

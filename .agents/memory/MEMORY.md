@@ -16,7 +16,8 @@ Index for durable cofounder memory. Agents: read this first, then open linked fi
 - [Build progress](project_build_progress.md) — Phase 0–1 + marketing website; Ask at `/ask`
 - [Skills index](reference_skills.md) — `.agents/skills/` reusable build skills
 - [Website UI plan](../plans/semgraf_website_ui.plan.md) — marketing sections; Ask = sub-feature
-- [Domain](project_domain.md) — `semgraf.in` @ Hostinger; deploy host TBD
+- [Domain](project_domain.md) — `semgraf.in` live on CF Workers
+- [Brand v0](project_brand_v0.md) — ascent mark in nav; v1 exploration later
 
 ## How to add
 

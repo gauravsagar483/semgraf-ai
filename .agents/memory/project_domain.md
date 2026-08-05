@@ -1,6 +1,6 @@
 ---
 name: domain-hosting
-description: "Primary domain semgraf.in registered at Hostinger; static deploy host not chosen yet."
+description: "semgraf.in live on Cloudflare Workers; Hostinger registrar; NS on Cloudflare."
 metadata:
   node_type: memory
   type: project
@@ -9,14 +9,12 @@ metadata:
 **Why:** brand URL locked; avoid re-buying / re-picking TLD mid-GTM.
 **How to apply:**
 
-- **Domain:** `https://semgraf.in/` (not `.ai`)
-- **Registrar:** Hostinger
-- **Deploy host:** Cloudflare Workers + static assets (root `wrangler.toml` → `apps/web/dist`)
-- **CF build command:** `npm run build` (works) or `npm run cf:build`
-- **CF deploy command:** `npx wrangler deploy` (root config; do not use `--cwd`)
-- Keep Hostinger as registrar; DNS either stay Hostinger or move NS → Cloudflare
-- Point apex + `www` at Worker custom domain
-- **Git hygiene:** default machine SSH/`gh`/`user.email` still point at **employer** (`gsagar_expedia`). Semgraf push must use personal (`gauravsagar483` + `gauravsagar483@gmail.com` via `personal.github.com`). Never push Semgraf with work identity.
-- Public go-live still behind COI gate
+- **Live:** https://semgraf.in/ (marketing + blog + Ask UI shell)
+- **Preview:** https://semgraf-ai.gauravsagar483.workers.dev
+- **Registrar:** Hostinger · **DNS/NS:** Cloudflare · **Host:** Workers static assets (`apps/web/wrangler.toml`)
+- **CF build:** `npm run build` · **CF deploy:** `npx wrangler deploy --cwd apps/web`
+- **Ask `/api`:** not on CF yet — static only; demo Ask needs API host later
+- **Git hygiene:** push via personal (`gauravsagar483` + `personal.github.com`). Never work identity.
+- Public blast / LinkedIn / partners still behind **COI gate**
 
 Related: [[clean-room-gates]] [[founder-constraints]] [[build-progress]]

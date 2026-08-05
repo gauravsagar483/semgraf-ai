@@ -2,6 +2,8 @@
 
 **Semgraf** — dual-plane runtime for data agents: compile governed metrics, traverse verified relationships.
 
+**Live:** [semgraf.in](https://semgraf.in/)
+
 Clean-room personal product. Public libraries OK. No employer code, schemas, or marks.
 
 **Tooling:** **uv** (Python) + **pnpm** (JS).
